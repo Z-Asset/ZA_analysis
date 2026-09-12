@@ -234,10 +234,23 @@ class ZResearchSkillProvider implements SkillProvider {
 }
 
 // ---------------------------------------------------------------------------
-// apply — mount the provider
+// apply — mount the provider + the subagent orchestrator
 // ---------------------------------------------------------------------------
+import { setupOrchestrator } from './orchestrator.js';
+
 export function apply(ctx: Context) {
   ctx.skills.registerProvider(
     () => new ZResearchSkillProvider('za-analysis', (message) => ctx.logger?.warn(message)),
   );
+
+  // Mount the /analyze command that spawns real coder/coder-critic subagents.
+  // The orchestrator probes the optional host services itself and degrades
+  // gracefully to role-play when subagents/commands are unavailable.
+  setupOrchestrator(ctx, {
+    commandName: 'analyze',
+    commandDescription: 'Z Research 模型训练与结论：spawn coder 创作 + coder-critic 独立评审（three-strikes 迭代）',
+    workerRole: 'coder',
+    criticRole: 'coder-critic',
+    referencesDir: join(PACKAGE_ROOT, 'skills', 'za-analysis', 'references'),
+  });
 }

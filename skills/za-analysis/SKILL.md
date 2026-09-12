@@ -10,7 +10,7 @@ whenToUse: 端到端分析、模型训练与估计、结果产出、代码评审
 - `references/agents/coder.md` — 研究编码者（R/Python/Julia）
 - `references/agents/data-engineer.md` — 数据工程师（清洗+图）
 - `references/agents/coder-critic.md` — 代码评审者
-- 编码标准：`references/domain/coding-standards-r.md`、`coding-standards-python.md`
+- 编码标准：`references/domain/coding-standards-r.md`、`references/domain/coding-standards-python.md`
 
 ## 工作流
 

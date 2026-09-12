@@ -1,5 +1,5 @@
 {
-  "name": "@zr/za-analysis",
+  "name": "@zasset/za-analysis",
   "version": "0.1.0",
   "description": "Z Research analysis stage — end-to-end model training and estimation for asset pricing + ML/DL research. Ships one skill.",
   "type": "module",
