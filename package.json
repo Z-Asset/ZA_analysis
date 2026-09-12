@@ -1,0 +1,62 @@
+{
+  "name": "@zr/za-analysis",
+  "version": "0.1.0",
+  "description": "Z Research analysis stage — end-to-end model training and estimation for asset pricing + ML/DL research. Ships one skill.",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "skills",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "yaml": "^2.6.1"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1-rc.1",
+    "@deepseek-ai/dsh-skill": ">=0.0.1-rc.1 <0.1.0 || >=0.1.0-rc.1 <0.2.0-0"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1-rc.1",
+    "@deepseek-ai/dsh-skill": ">=0.0.1-rc.1 <0.1.0 || >=0.1.0-rc.1 <0.2.0-0",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "asset-pricing",
+    "machine-learning",
+    "research",
+    "skills"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Z Asset",
+    "email": "x@zasset.cn"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Z-Asset/ZA_analysis.git"
+  },
+  "homepage": "https://github.com/Z-Asset/ZA_analysis"
+}

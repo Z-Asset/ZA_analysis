@@ -1,0 +1,8 @@
+# za-analysis bundle layer.
+# Inserts one Cordis plugin row into the profile:
+#   id   = Cordis plugin id (matches src/index.ts export const name)
+#   name = npm package name (dsh resolves it through the profile's installed packages)
+# Activated by: dsh plugin --profile <name> add @zr/za-analysis
+- insert:
+    - id: za-analysis
+      name: '@zr/za-analysis'
